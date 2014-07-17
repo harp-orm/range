@@ -2,7 +2,6 @@
 
 namespace Harp\Range;
 
-use Harp\Harp\AbstractModel;
 use InvalidArgumentException;
 use Closure;
 use ArrayAccess;
@@ -13,8 +12,8 @@ use Serializable;
  * @copyright 2014, Clippings Ltd.
  * @license   http://spdx.org/licenses/BSD-3-Clause
  */
-class Range implements ArrayAccess, Serializable {
-
+class Range implements ArrayAccess, Serializable
+{
     /**
      * @param  Range[] $ranges
      * @param  string  $format
@@ -134,7 +133,7 @@ class Range implements ArrayAccess, Serializable {
     }
 
     /**
-     * @param integer $min
+     * @param integer $max
      * @return Range
      */
     public function setMax($max)
@@ -163,7 +162,7 @@ class Range implements ArrayAccess, Serializable {
      */
     public function assertValidOffset($offset)
     {
-        if ( ! $this->offsetExists($offset)) {
+        if (! $this->offsetExists($offset)) {
             throw new InvalidArgumentException(
                 sprintf('Offset must be 0 (for min) or 1 (for max) but was %s', $offset)
             );
@@ -242,7 +241,7 @@ class Range implements ArrayAccess, Serializable {
     }
 
     /**
-     * @return array
+     * @return integer[]
      */
     public function toArray()
     {
