@@ -1,0 +1,259 @@
+{
+    "_readme": [
+        "This file locks the dependencies of your project to a known state",
+        "Read more about it at http://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
+        "This file is @generated automatically"
+    ],
+    "hash": "2c6220c6e4094425e1622f68f4d1cfee",
+    "packages": [
+        {
+            "name": "harp-orm/harp",
+            "version": "0.3.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/harp-orm/harp.git",
+                "reference": "65efad7d29abd80647b9452ef1214ad77d578523"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/harp-orm/harp/zipball/65efad7d29abd80647b9452ef1214ad77d578523",
+                "reference": "65efad7d29abd80647b9452ef1214ad77d578523",
+                "shasum": ""
+            },
+            "require": {
+                "harp-orm/query": "~0.2.0",
+                "harp-orm/serializer": "~0.1.0",
+                "harp-orm/util": "~0.2.0",
+                "harp-orm/validate": "~0.2.0",
+                "php": ">=5.4.0"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Harp\\Harp\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "BSD-3-Clause"
+            ],
+            "authors": [
+                {
+                    "name": "Ivan Kerin",
+                    "email": "ikerin@gmail.com",
+                    "homepage": "http://www.openbuildings.com",
+                    "role": "Author"
+                }
+            ],
+            "description": "Light and Flexible ORM without magic",
+            "time": "2014-07-16 10:39:04"
+        },
+        {
+            "name": "harp-orm/query",
+            "version": "0.2.3",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/harp-orm/query.git",
+                "reference": "a0627bedc11d062580fc33b71e57f9d8df45bdbc"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/harp-orm/query/zipball/a0627bedc11d062580fc33b71e57f9d8df45bdbc",
+                "reference": "a0627bedc11d062580fc33b71e57f9d8df45bdbc",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.3.0",
+                "psr/log": "~1.0"
+            },
+            "require-dev": {
+                "clippings/env-backup": "~0.2.4"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Harp\\Query\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "BSD-3-Clause"
+            ],
+            "authors": [
+                {
+                    "name": "Ivan Kerin",
+                    "email": "ikerin@gmail.com",
+                    "homepage": "http://www.openbuildings.com",
+                    "role": "Author"
+                },
+                {
+                    "name": "Haralan Dobrev",
+                    "email": "hkdobrev@gmail.com",
+                    "homepage": "http://hkdobrev.blogspot.com",
+                    "role": "Developer"
+                }
+            ],
+            "description": "SQL Builder for PDO",
+            "time": "2014-07-07 11:52:30"
+        },
+        {
+            "name": "harp-orm/serializer",
+            "version": "0.1.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/harp-orm/serializer.git",
+                "reference": "652a190ceabb4f3c55a41f33e0b23ba5197bd964"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/harp-orm/serializer/zipball/652a190ceabb4f3c55a41f33e0b23ba5197bd964",
+                "reference": "652a190ceabb4f3c55a41f33e0b23ba5197bd964",
+                "shasum": ""
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Harp\\Serializer\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "BSD-3-Clause"
+            ],
+            "authors": [
+                {
+                    "name": "Ivan Kerin",
+                    "email": "ikerin@gmail.com",
+                    "homepage": "http://www.openbuildings.com",
+                    "role": "Author"
+                }
+            ],
+            "description": "Serialize object properties",
+            "time": "2014-07-17 11:30:08"
+        },
+        {
+            "name": "harp-orm/util",
+            "version": "0.2.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/harp-orm/util.git",
+                "reference": "66de94b09e584b00d1a67090e72f0e31454fab15"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/harp-orm/util/zipball/66de94b09e584b00d1a67090e72f0e31454fab15",
+                "reference": "66de94b09e584b00d1a67090e72f0e31454fab15",
+                "shasum": ""
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Harp\\Util\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "BSD-3-Clause"
+            ],
+            "authors": [
+                {
+                    "name": "Ivan Kerin",
+                    "email": "ikerin@gmail.com",
+                    "homepage": "http://www.openbuildings.com",
+                    "role": "Author"
+                }
+            ],
+            "description": "General purpose helper methods",
+            "time": "2014-06-12 07:03:18"
+        },
+        {
+            "name": "harp-orm/validate",
+            "version": "0.2.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/harp-orm/validate.git",
+                "reference": "bc3e94db54fbeb8f68b6e24b674b3382bc314d49"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/harp-orm/validate/zipball/bc3e94db54fbeb8f68b6e24b674b3382bc314d49",
+                "reference": "bc3e94db54fbeb8f68b6e24b674b3382bc314d49",
+                "shasum": ""
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Harp\\Validate\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "BSD-3-Clause"
+            ],
+            "authors": [
+                {
+                    "name": "Ivan Kerin",
+                    "email": "ikerin@gmail.com",
+                    "homepage": "http://www.openbuildings.com",
+                    "role": "Author"
+                }
+            ],
+            "description": "Object validaiton library",
+            "time": "2014-07-09 14:58:00"
+        },
+        {
+            "name": "psr/log",
+            "version": "1.0.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/php-fig/log.git",
+                "reference": "fe0936ee26643249e916849d48e3a51d5f5e278b"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/php-fig/log/zipball/fe0936ee26643249e916849d48e3a51d5f5e278b",
+                "reference": "fe0936ee26643249e916849d48e3a51d5f5e278b",
+                "shasum": ""
+            },
+            "type": "library",
+            "autoload": {
+                "psr-0": {
+                    "Psr\\Log\\": ""
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "PHP-FIG",
+                    "homepage": "http://www.php-fig.org/"
+                }
+            ],
+            "description": "Common interface for logging libraries",
+            "keywords": [
+                "log",
+                "psr",
+                "psr-3"
+            ],
+            "time": "2012-12-21 11:40:51"
+        }
+    ],
+    "packages-dev": [
+
+    ],
+    "aliases": [
+
+    ],
+    "minimum-stability": "stable",
+    "stability-flags": [
+
+    ],
+    "platform": {
+        "php": ">=5.4.0"
+    },
+    "platform-dev": [
+
+    ]
+}

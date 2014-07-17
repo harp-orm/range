@@ -1,0 +1,34 @@
+language: php
+
+php:
+  - 5.4
+  - 5.5
+  - hhvm-nightly
+
+matrix:
+  allow_failures:
+    - php: hhvm-nightly
+
+notifications:
+  email: false
+  slack:
+    secure: nZrHpNZQENh5e6VTzuS1B4A10jwaq8Dc6nTVZ7uShy777dsNUdfDyHcZkHKsvtDwe7oxunDib7bBfDd5MLXvHwd/ZDW0fhfHDL0fecOTyDKrp/3kAsayWbotZVxcomJaussnnJwTTfU97ACIq0Jzx3zsCyjc91S99uF+FVgtUDI=
+
+
+before_install:
+  - composer selfupdate
+
+install:
+  - composer install
+
+before_script:
+  - mkdir -p build/logs
+  - mysql -e 'create database `harp-orm/range`;'
+  - mysql harp-orm/range < tests/mysql.sql
+
+script:
+  - phpunit --coverage-clover build/logs/clover.xml
+
+after_script:
+  - test -e build/logs/clover.xml && wget https://scrutinizer-ci.com/ocular.phar
+  - test -e build/logs/clover.xml && php ocular.phar code-coverage:upload --format=php-clover build/logs/clover.xml
