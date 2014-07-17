@@ -4,8 +4,11 @@
         "Read more about it at http://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "2c6220c6e4094425e1622f68f4d1cfee",
+    "hash": "68a641a456a7b3acf295b05e0e475710",
     "packages": [
+
+    ],
+    "packages-dev": [
         {
             "name": "harp-orm/harp",
             "version": "0.3.1",
@@ -239,9 +242,6 @@
             ],
             "time": "2012-12-21 11:40:51"
         }
-    ],
-    "packages-dev": [
-
     ],
     "aliases": [
 
