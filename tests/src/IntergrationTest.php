@@ -18,15 +18,15 @@ class IntegrationTest extends AbstractTestCase
     {
         $model = TestModel::find(1);
 
-        $this->assertEquals(new Range(10, 32), $model->getRange());
+        $this->assertEquals(new Range(10, 32), $model->getDays());
 
-        $model->setRange(new Range(4, 12));
+        $model->setDays(new Range(4, 12));
 
         TestModel::save($model);
 
         $this->assertQueries([
             'SELECT `TestModel`.* FROM `TestModel` WHERE (`id` = 1) LIMIT 1',
-            'UPDATE `TestModel` SET `range` = "4|12" WHERE (`id` = 1)',
+            'UPDATE `TestModel` SET `days` = "4|12" WHERE (`id` = 1)',
         ]);
     }
 }

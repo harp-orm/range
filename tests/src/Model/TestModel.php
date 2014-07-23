@@ -3,7 +3,7 @@
 namespace Harp\Range\Test\Model;
 
 use Harp\Harp\AbstractModel;
-use Harp\Range\Range;
+use Harp\Range\DaysRangeTrait;
 
 /**
  * @author    Ivan Kerin <ikerin@gmail.com>
@@ -12,21 +12,12 @@ use Harp\Range\Range;
  */
 class TestModel extends AbstractModel
 {
+    use DaysRangeTrait;
+
     public static function initialize($config)
     {
-        $config;
+        DaysRangeTrait::initialize($config);
     }
 
     public $id;
-    public $range;
-
-    public function getRange()
-    {
-        return Range::fromString($this->range);
-    }
-
-    public function setRange(Range $range)
-    {
-        $this->range = $range->__toString();
-    }
 }

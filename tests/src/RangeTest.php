@@ -46,15 +46,6 @@ class RangeTest extends AbstractTestCase
     }
 
     /**
-     * @covers ::fromString
-     */
-    public function testFromString()
-    {
-        $range = Range::fromString('10|32');
-        $this->assertEquals(new Range(10, 32), $range);
-    }
-
-    /**
      * @covers ::__construct
      * @covers ::getMin
      * @covers ::setMin
@@ -155,16 +146,6 @@ class RangeTest extends AbstractTestCase
         $this->setExpectedException('InvalidArgumentException', 'Cannot unset range object');
 
         unset($range[0]);
-    }
-
-    /**
-     * @covers ::__toString
-     */
-    public function testToString()
-    {
-        $range = new Range(10, 32);
-
-        $this->assertSame('10|32', (string) $range);
     }
 
     /**

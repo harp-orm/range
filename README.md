@@ -74,6 +74,36 @@ $range = Range::merge([$range1, $range2, $range3], '%s - %s');
 echo $range; // 9|10
 ```
 
+Using with models
+-----------------
+
+There is a trait that adds methods for working with ranges to a model. To persist the data, it adds the "days" property to the model.
+
+```php
+use Harp\Harp\AbstractModel;
+use Harp\Range\DaysRangeTrait;
+
+class TestModel extends AbstractModel
+{
+    use DaysRangeTrait;
+
+    public static function initialize($config)
+    {
+        DaysRangeTrait::initialize($config);
+    }
+}
+
+$testModel = new TestModel();
+
+// Will get you a Range object
+$testModel->getDays();
+
+$testModel->setDays(new Range(5, 10));
+
+// Will return "5|10"
+echo $testModel->days;
+```
+
 License
 -------
 

@@ -62,7 +62,7 @@ class AssertRange extends AbstractAssertion
             }
 
             if ($this->isConsecutive()) {
-                $range = Range::fromString($value);
+                $range = (new Range())->unserialize($value);
                 if ($range->getMin() > $range->getMax()) {
                     return new Error($this->getMessage(), $this->getName());
                 }

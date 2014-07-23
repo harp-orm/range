@@ -49,17 +49,6 @@ class Range implements ArrayAccess, Serializable
     }
 
     /**
-     * @param  string $range
-     * @return Range
-     */
-    public static function fromString($range)
-    {
-        list($min, $max) = $range ? explode('|', $range) : [0, 0];
-
-        return new Range($min, $max);
-    }
-
-    /**
      * @param integer        $min
      * @param integer        $max
      * @param string|Closure $format
@@ -222,14 +211,6 @@ class Range implements ArrayAccess, Serializable
     /**
      * @return string
      */
-    public function __toString()
-    {
-        return $this->min.'|'.$this->max;
-    }
-
-    /**
-     * @return string
-     */
     public function humanize()
     {
         if ($this->format instanceof Closure) {
@@ -253,17 +234,20 @@ class Range implements ArrayAccess, Serializable
      */
     public function serialize()
     {
-        return $this->__toString();
+        return $this->min.'|'.$this->max;
     }
 
     /**
      * @param  string $data
+     * @return Range
      */
     public function unserialize($data)
     {
-        list($min, $max) = explode('|', $data);
+        list($min, $max) = $data ? explode('|', $data) : [0, 0];
 
         $this->setMin($min);
         $this->setMax($max);
+
+        return $this;
     }
 }
