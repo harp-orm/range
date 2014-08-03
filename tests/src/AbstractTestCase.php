@@ -5,7 +5,6 @@ namespace Harp\Range\Test;
 use Harp\Query\DB;
 use Harp\Harp\Repo\Container;
 use PHPUnit_Framework_TestCase;
-use Harp\Range\Test\Repo;
 
 /**
  * @author    Ivan Kerin <ikerin@gmail.com>
