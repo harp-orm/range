@@ -84,7 +84,7 @@ class Range implements ArrayAccess, Serializable
     }
 
     /**
-     * @param string|Closure $format
+     * @param  string|Closure $format
      * @return Range
      */
     public function setFormat($format)
@@ -103,7 +103,7 @@ class Range implements ArrayAccess, Serializable
     }
 
     /**
-     * @param integer $min
+     * @param  integer $min
      * @return Range
      */
     public function setMin($min)
@@ -122,7 +122,7 @@ class Range implements ArrayAccess, Serializable
     }
 
     /**
-     * @param integer $max
+     * @param  integer $max
      * @return Range
      */
     public function setMax($max)
@@ -161,8 +161,8 @@ class Range implements ArrayAccess, Serializable
     /**
      * Implements ArrayAccess
      *
-     * @param  integer $offset
-     * @param  integer $value
+     * @param integer $offset
+     * @param integer $value
      */
     public function offsetSet($offset, $value)
     {
@@ -178,7 +178,7 @@ class Range implements ArrayAccess, Serializable
     /**
      * Implements ArrayAccess
      *
-     * @param  integer $offset
+     * @param integer $offset
      */
     public function offsetExists($offset)
     {
@@ -188,7 +188,7 @@ class Range implements ArrayAccess, Serializable
     /**
      * Implements ArrayAccess
      *
-     * @param  integer $offset
+     * @param integer $offset
      */
     public function offsetUnset($offset)
     {

@@ -26,6 +26,8 @@ class DaysRangeTraitTest extends AbstractTestCase
 
         $model->setDays(new Range(10, 21));
 
+        $this->assertTrue($model->validate());
+
         $this->assertEquals('10|21', $model->days);
     }
 }

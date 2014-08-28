@@ -5,7 +5,7 @@ namespace Harp\Range;
 use Harp\Harp\Config;
 
 /**
- * Adds value property
+ * Adds days property
  * Adds present and number asserts on value property
  *
  * @author    Ivan Kerin <ikerin@gmail.com>
@@ -18,14 +18,17 @@ trait DaysRangeTrait
     {
         $config
             ->addAsserts([
-                new AssertRange('value'),
+                new AssertRange('days'),
             ]);
     }
 
+    /**
+     * @var string
+     */
     public $days;
 
     /**
-     * @return Money
+     * @return Range
      */
     public function getDays()
     {
@@ -33,10 +36,12 @@ trait DaysRangeTrait
     }
 
     /**
-     * @return static
+     * @param Range $range
      */
     public function setDays(Range $range)
     {
-        return $this->days = $range->serialize();
+        $this->days = $range->serialize();
+
+        return $this;
     }
 }

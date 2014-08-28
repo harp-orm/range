@@ -2,7 +2,6 @@
 
 namespace Harp\Range;
 
-use Harp\Validate\Error;
 use Harp\Validate\Assert\AbstractValueAssertion;
 
 /**
@@ -27,7 +26,7 @@ class AssertRange extends AbstractValueAssertion
     }
 
     /**
-     * @var mixed
+     * @var integer
      */
     protected $type;
 
@@ -54,7 +53,7 @@ class AssertRange extends AbstractValueAssertion
      */
     public function isValid($value)
     {
-        if ( ! self::isValidRange($value)) {
+        if (! self::isValidRange($value)) {
             return false;
         }
 
