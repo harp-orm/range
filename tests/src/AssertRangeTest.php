@@ -3,14 +3,13 @@
 namespace Harp\Range\Test;
 
 use Harp\Range\AssertRange;
-use Harp\Validate\Test\AbstractTestCase;
 
 /**
  * @coversDefaultClass Harp\Range\AssertRange
  */
 class AssertRangeTest extends AbstractTestCase
 {
-    public function dataIsValid()
+    public function dataIsValidRange()
     {
         return [
             ['|', true],
@@ -24,40 +23,39 @@ class AssertRangeTest extends AbstractTestCase
     }
 
     /**
-     * @dataProvider dataIsValid
-     * @covers ::isValid
+     * @dataProvider dataIsValidRange
+     * @covers ::isValidRange
      */
-    public function testIsValid($rangeString, $expected)
+    public function testIsValidRange($rangeString, $expected)
     {
-        $this->assertSame($expected, AssertRange::isValid($rangeString));
+        $this->assertSame($expected, AssertRange::isValidRange($rangeString));
     }
 
-    public function dataExecute()
+    public function dataIsValid()
     {
         return [
             ['1|2', AssertRange::RANDOM, true],
             ['2|1', AssertRange::RANDOM, true],
             ['|', AssertRange::RANDOM, true],
-            ['n34', AssertRange::RANDOM, 'test is invalid'],
+            ['n34', AssertRange::RANDOM, false],
             ['1|2', AssertRange::CONSECUTIVE, true],
-            ['ds|2', AssertRange::CONSECUTIVE, 'test is invalid'],
-            ['4|2', AssertRange::CONSECUTIVE, 'test is invalid'],
+            ['ds|2', AssertRange::CONSECUTIVE, false],
+            ['4|2', AssertRange::CONSECUTIVE, false],
         ];
     }
 
     /**
-     * @dataProvider dataExecute
-     * @covers ::execute
+     * @dataProvider dataIsValid
+     * @covers ::isValid
      */
-    public function testExecute($value, $type, $expected)
+    public function testIsValid($value, $type, $expected)
     {
         $assertion = new AssertRange('test', $type);
 
-        $this->assertAssertion($expected, $assertion, $value);
+        $this->assertEquals($expected, $assertion->isvalid($value));
     }
 
     /**
-     * @dataProvider dataExecute
      * @covers ::__construct
      * @covers ::isConsecutive
      */

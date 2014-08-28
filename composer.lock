@@ -4,20 +4,20 @@
         "Read more about it at http://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "0f4720a81ea816c10bcf55bd340adddc",
+    "hash": "6f8bdea47c4923999b4c26bbc9aa17cb",
     "packages": [
         {
             "name": "harp-orm/validate",
-            "version": "0.3.0",
+            "version": "0.4",
             "source": {
                 "type": "git",
                 "url": "https://github.com/harp-orm/validate.git",
-                "reference": "7d23bcabde80eac6072bcbd61f477efaaa598e99"
+                "reference": "c9cd4963a15c4311cb665de346502e26b268e205"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/harp-orm/validate/zipball/7d23bcabde80eac6072bcbd61f477efaaa598e99",
-                "reference": "7d23bcabde80eac6072bcbd61f477efaaa598e99",
+                "url": "https://api.github.com/repos/harp-orm/validate/zipball/c9cd4963a15c4311cb665de346502e26b268e205",
+                "reference": "c9cd4963a15c4311cb665de346502e26b268e205",
                 "shasum": ""
             },
             "type": "library",
@@ -38,7 +38,7 @@
                 }
             ],
             "description": "Object validaiton library",
-            "time": "2014-08-21 13:47:40"
+            "time": "2014-08-28 08:39:30"
         }
     ],
     "packages-dev": [
@@ -48,19 +48,19 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/harp-orm/harp.git",
-                "reference": "43c4dc3529ebb8bbf7e37c7c9fb0ceb5a468c964"
+                "reference": "a58b47e62d0f7ab41eb924f02da71c8687cb663b"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/harp-orm/harp/zipball/43c4dc3529ebb8bbf7e37c7c9fb0ceb5a468c964",
-                "reference": "43c4dc3529ebb8bbf7e37c7c9fb0ceb5a468c964",
+                "url": "https://api.github.com/repos/harp-orm/harp/zipball/a58b47e62d0f7ab41eb924f02da71c8687cb663b",
+                "reference": "a58b47e62d0f7ab41eb924f02da71c8687cb663b",
                 "shasum": ""
             },
             "require": {
                 "harp-orm/query": "~0.2.0",
                 "harp-orm/serializer": "~0.1.0",
                 "harp-orm/util": "~0.2.2",
-                "harp-orm/validate": "~0.3.0",
+                "harp-orm/validate": "~0.4.0",
                 "php": ">=5.4.0"
             },
             "type": "library",
@@ -81,7 +81,7 @@
                 }
             ],
             "description": "Light and Flexible ORM without magic",
-            "time": "2014-08-21 13:59:13"
+            "time": "2014-08-28 08:49:24"
         },
         {
             "name": "harp-orm/query",

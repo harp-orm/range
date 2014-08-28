@@ -3,7 +3,7 @@
 namespace Harp\Range;
 
 use Harp\Validate\Error;
-use Harp\Validate\Assert\AbstractAssertion;
+use Harp\Validate\Assert\AbstractValueAssertion;
 
 /**
  * Assert that the value is a valid iso currency code
@@ -12,7 +12,7 @@ use Harp\Validate\Assert\AbstractAssertion;
  * @copyright (c) 2014 Clippings Ltd.
  * @license   http://spdx.org/licenses/BSD-3-Clause
  */
-class AssertRange extends AbstractAssertion
+class AssertRange extends AbstractValueAssertion
 {
     const RANDOM = 1;
     const CONSECUTIVE = 2;
@@ -21,7 +21,7 @@ class AssertRange extends AbstractAssertion
      * @param  string  $rangeString
      * @return boolean
      */
-    public static function isValid($rangeString)
+    public static function isValidRange($rangeString)
     {
         return (bool) preg_match('/^\d*\|\d*$/', $rangeString);
     }
@@ -33,7 +33,7 @@ class AssertRange extends AbstractAssertion
 
     /**
      * @param string  $name
-     * @param integer $type
+     * @param integer $type    AssertRange::CONSECUTIVE or AssertRange::RANDOM
      * @param string  $message
      */
     public function __construct($name, $type = AssertRange::CONSECUTIVE, $message = ':name is invalid')
@@ -49,24 +49,22 @@ class AssertRange extends AbstractAssertion
     }
 
     /**
-     * @param  object|array $subject
-     * @return Error|null
+     * @param  mixed   $value
+     * @return boolean
      */
-    public function execute($subject)
+    public function isValid($value)
     {
-        if ($this->issetProperty($subject, $this->getName())) {
-            $value = $this->getProperty($subject, $this->getName());
+        if ( ! self::isValidRange($value)) {
+            return false;
+        }
 
-            if (! self::isValid($value)) {
-                return new Error($this->getMessage(), $this->getName());
-            }
-
-            if ($this->isConsecutive()) {
-                $range = (new Range())->unserialize($value);
-                if ($range->getMin() > $range->getMax()) {
-                    return new Error($this->getMessage(), $this->getName());
-                }
+        if ($this->isConsecutive()) {
+            $range = (new Range())->unserialize($value);
+            if ($range->getMin() > $range->getMax()) {
+                return false;
             }
         }
+
+        return true;
     }
 }
